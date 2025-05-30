@@ -160,39 +160,42 @@ public class Main {
         // Задача 3.
         System.out.println("\nTask 3.");
 
-        short ludmilaPavlovnaStudents = 23;     // Количсетво учеников в классе Людмилы Петровны
-        short annaSergeevnaStudents = 27;       // Количсетво учеников в классе Анны Сергеевны
-        short ekaterinaAndreevnaStudents = 30;  // Количсетво учеников в классе Екатерины Андреевны
+        byte ludmilaPavlovnaStudents = 23;     // Количсетво учеников в классе Людмилы Петровны
+        byte annaSergeevnaStudents = 27;       // Количсетво учеников в классе Анны Сергеевны
+        byte ekaterinaAndreevnaStudents = 30;  // Количсетво учеников в классе Екатерины Андреевны
         short allPaperPages = 480;              // Закуплено листов на все классы
 
-        int oneStudentsPaperPages = (allPaperPages / (ludmilaPavlovnaStudents + annaSergeevnaStudents + ekaterinaAndreevnaStudents));
+        int oneStudentsPaperPages = allPaperPages / (ludmilaPavlovnaStudents + annaSergeevnaStudents + ekaterinaAndreevnaStudents);
 
         System.out.printf("На каждого ученика рассчитано %d листов бумаги\n", oneStudentsPaperPages);
 
         //Задача 4.
         System.out.println("\nTask 4.");
 
-        float productivity = 16.0F / 2.0F;
+        byte productivity = 16 / 2;
 
-        int timePeriodProductValue = (int)(productivity * 20);
-        System.out.printf("За 20 мин машина произвела %d штук бутылок\n", timePeriodProductValue);
-        timePeriodProductValue = (int)(productivity * 24 * 60);
+        int timePeriodProductValue = productivity * 20;
+        System.out.printf("За 20 мин машина произвела %f штук бутылок\n", timePeriodProductValue);
+
+        timePeriodProductValue = productivity * 24 * 60;
         System.out.printf("За сутки машина произвела %d штук бутылок\n", timePeriodProductValue);
-        timePeriodProductValue = (int)(productivity * 24 * 60 * 3);
+
+        timePeriodProductValue = productivity * 24 * 60 * 3;
         System.out.printf("За 3 дня машина произвела %d штук бутылок\n", timePeriodProductValue);
-        timePeriodProductValue = (int)(productivity * 24 * 60 * 3 * 30);
+
+        timePeriodProductValue = productivity * 24 * 60 * 30;
         System.out.printf("За месяц машина произвела %d штук бутылок\n", timePeriodProductValue);
 
         //Задача 5.
         System.out.println("\nTask 5.");
 
-        short allPaintPots = 120;           // Всего банок краски закуплено
-        short whitePaintPotsForClass = 2;    // Количество банок белой краски на один класс
-        short brownPaintPotsForClass = 4;    // Количество банок коричневой краски на один класс
+        byte allPaintPots = 120;           // Всего банок краски закуплено
+        byte whitePaintPotsForClass = 2;    // Количество банок белой краски на один класс
+        byte brownPaintPotsForClass = 4;    // Количество банок коричневой краски на один класс
 
-        short numberOfClasses = (short)(allPaintPots / (whitePaintPotsForClass + brownPaintPotsForClass));
-        short whitePaintPots = (short)(whitePaintPotsForClass * numberOfClasses);
-        short brownPaintPots = (short)(brownPaintPotsForClass * numberOfClasses);
+        int numberOfClasses = allPaintPots / (whitePaintPotsForClass + brownPaintPotsForClass);
+        int whitePaintPots = whitePaintPotsForClass * numberOfClasses;
+        int brownPaintPots = brownPaintPotsForClass * numberOfClasses;
 
         System.out.printf(
                 "В школе, где %d классов, нужно %d банок белой краски %d банок коричневой краски",
@@ -201,17 +204,17 @@ public class Main {
         //Задача 6.
         System.out.println("\nTask 6.");
 
-        int bananaWeight = 80;
-        int bananasCount = 5;
+        byte bananaWeight = 80;
+        byte bananasCount = 5;
 
-        int milkWeight = 105;
-        int milkCount = 2;
+        byte milkWeight = 105;
+        byte milkCount = 2;
 
-        int plombirWeight = 100;
-        int plombirsCount = 2;
+        byte plombirWeight = 100;
+        byte plombirsCount = 2;
 
-        int eggWeight = 70;
-        int eggsCount = 4;
+        byte eggWeight = 70;
+        byte eggsCount = 4;
 
         // Масса завтрака, грамм
         int breakfastGrams =
@@ -227,14 +230,14 @@ public class Main {
         final short dayMinWeightLoss = 250;
         final short dayMaxWeightLoss = 500;
 
-        short minDays = (short)(expectedWeightLoss / dayMinWeightLoss);
-        short maxDays = (short)(expectedWeightLoss  / dayMaxWeightLoss);
+        short minDays = expectedWeightLoss / dayMinWeightLoss;
+        short maxDays = expectedWeightLoss  / dayMaxWeightLoss;
 
-        short dayAverageWeightLoss = ((dayMinWeightLoss + dayMaxWeightLoss) / 2);
-        short divisionRemainder = (short)(expectedWeightLoss % dayAverageWeightLoss);
-        short avrageDays = divisionRemainder == 0
-                           ? (short)(expectedWeightLoss / dayAverageWeightLoss)
-                           : (short)((expectedWeightLoss / dayAverageWeightLoss) + 1);
+        short dayAverageWeightLoss = (dayMinWeightLoss + dayMaxWeightLoss) / 2;
+        int divisionRemainder = expectedWeightLoss % dayAverageWeightLoss;
+        int avrageDays = divisionRemainder == 0
+                           ? expectedWeightLoss / dayAverageWeightLoss
+                           : (expectedWeightLoss / dayAverageWeightLoss) + 1;
 
         System.out.printf("При сбросе 250 граммов в день уйдёт %d дней \n" +
                         "При сбросе 500 граммов в день уйдёт %d дней \n" +
