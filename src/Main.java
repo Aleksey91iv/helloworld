@@ -13,6 +13,9 @@ public class Main {
 
         // Условный оператор: Урок 1.
         executeConditionsLessonPart1();
+
+        // Условные операторы: Урок 2.
+        executeConditionsLessonPart2();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -381,6 +384,123 @@ public class Main {
             System.out.printf("Число two = %d явялется наибольшим.\n", two);
         } else {
             System.out.printf("Число three = %d явялется наибольшим.\n", three);
+        }
+    }
+
+    // Выполнить урок "Условный оператор: Урок 2"
+    private static void executeConditionsLessonPart2(){
+        System.out.println("Условный оператор: Урок 2.");
+
+        // Задача 1.
+        System.out.println("\nTask 1.");
+
+        final int ios = 0;
+        final int androidOS = 1;
+
+        int userOS = 0;
+
+        if (userOS == ios) {
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        } else if (userOS == androidOS) {
+            System.out.println("Установите версию приложения для Android по ссылке.");
+        } else {
+            System.out.println("Отсутствует версия приложения по вашу ОС.");
+        }
+
+        // Задача 2.
+        System.out.println("\nTask 2.");
+
+        int supportThresholdSmartphoneReleaseYear = 2015;
+        int currentSmartphoneReleaseYear = 2016;
+
+        if (userOS == ios &&
+            currentSmartphoneReleaseYear >= supportThresholdSmartphoneReleaseYear) {
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        } else if (userOS == ios){
+            System.out.println("Установите облегчённую версию приложения для iOS по ссылке.");
+        } else if (userOS == androidOS &&
+                   currentSmartphoneReleaseYear >= supportThresholdSmartphoneReleaseYear) {
+            System.out.println("Установите версию приложения для Android по ссылке.");
+        } else if (userOS == androidOS){
+            System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
+        } else {
+            System.out.println("Отсутствует версия приложения по вашу ОС.");
+        }
+
+        // Задача 3.
+        System.out.println("\nTask 3.");
+
+        int currentYear = 1600;
+        boolean isLeapYear = currentYear > 1584 && (currentYear % 4 == 0 && currentYear % 100 != 0 || currentYear % 400 == 0);
+        if (isLeapYear) {
+            System.out.printf("%d год является високосным", currentYear);
+        } else {
+            System.out.printf("%d год не является високосным", currentYear);
+        }
+
+        // Задача 4.
+        System.out.println("\nTask 4.");
+
+        int maxDeliveryDistance = 100;
+        int firstDistanceTreshold = 20;
+        int deliveryIntervalOneDay = 40;
+        int incrementDays = 1;
+
+        int deliveryDistance = 5;
+        int deliveryDays =
+                incrementDays * (deliveryDistance + firstDistanceTreshold + deliveryIntervalOneDay) / deliveryIntervalOneDay;
+
+        if (deliveryDistance > maxDeliveryDistance){
+            System.out.println("Доставка не выполняется на расстояние от 100 км.");
+        }
+        else {
+            System.out.printf("Доставка займёт %d дня.\n", deliveryDays);
+        }
+
+        // Задача 5.
+        System.out.println("\nTask 5.");
+
+        int month = 12;
+
+        switch (month){
+            case 1:
+                System.out.println("Январь");
+                break;
+            case 2:
+                System.out.println("Февраль");
+                break;
+            case 3:
+                System.out.println("Март");
+                break;
+            case 4:
+                System.out.println("Апрель");
+                break;
+            case 5:
+                System.out.println("Май");
+                break;
+            case 6:
+                System.out.println("Июнь");
+                break;
+            case 7:
+                System.out.println("Июль");
+                break;
+            case 8:
+                System.out.println("Август");
+                break;
+            case 9:
+                System.out.println("Сентябрь");
+                break;
+            case 10:
+                System.out.println("Октябрь");
+                break;
+            case 11:
+                System.out.println("Ноябрь");
+                break;
+            case 12:
+                System.out.println("Декабрь");
+                break;
+            default:
+                System.out.println("Указан некорректный номер месяца.");
         }
     }
 }
