@@ -10,6 +10,9 @@ public class Main {
 
         // Переменные: Урок 2.
         executeVariableLessonPart2();
+
+        // Условный оператор: Урок 1.
+        executeConditionsLessonPart1();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -175,7 +178,7 @@ public class Main {
         byte productivity = 16 / 2;
 
         int timePeriodProductValue = productivity * 20;
-        System.out.printf("За 20 мин машина произвела %f штук бутылок\n", timePeriodProductValue);
+        System.out.printf("За 20 мин машина произвела %d штук бутылок\n", timePeriodProductValue);
 
         timePeriodProductValue = productivity * 24 * 60;
         System.out.printf("За сутки машина произвела %d штук бутылок\n", timePeriodProductValue);
@@ -267,5 +270,117 @@ public class Main {
         float differenceYearKristinaWages = (kristinaNewWages - kristinaWages) * 12;
         System.out.printf("%s теперь получает %f рублей. Годовой доход вырос на %f рублей",
                 kristina, kristinaNewWages, differenceYearKristinaWages);
+    }
+
+    // Выполнить урок "Условный операторы: Урок 1"
+    private static void executeConditionsLessonPart1(){
+        System.out.println("Условный оператор: Урок 1.");
+
+        // Задача 1.
+        System.out.println("\nTask 1.");
+
+        int ageUser = 19;
+
+        if (ageUser >= 18){
+            System.out.printf("Если возраст человека равен %d, то он совершеннолетний.\n", ageUser);
+        } else {
+            System.out.printf("Если возраст человека равен %d, то он не достиг совершеннолетия, нужно немного подождать\n", ageUser);
+        }
+
+        // Задача 2.
+        System.out.println("\nTask 2.");
+
+        int temperature = 6;
+        int headCritycalTemperature = 5;
+
+        if (temperature > headCritycalTemperature) {
+            System.out.printf("На улице %d градусов, можно идти без шапки.\n", temperature);
+        } else if (headCritycalTemperature < 5) {
+            System.out.printf("На улице %d градусов, нужно надеть шапку.\n", temperature);
+        } else {
+            System.out.printf("На улице %d градусов, сами смотрите надевать ли шапку ))).\n", temperature);
+        }
+
+        // Задача 3.
+        System.out.println("\nTask 3.");
+
+        int speed = 59;
+        int allowedSpeed = 60;
+
+        if (speed <= allowedSpeed) {
+            System.out.printf("Если скорость %d, то можно ездить спокойно.\n", speed);
+        } else if (speed > allowedSpeed) {
+            System.out.printf("Если скорость %d, то придется заплатить штраф.\n", speed);
+        }
+
+        // Задача 4.
+        System.out.println("\nTask 4.");
+
+        int age = 25;
+
+        int minKindergartenAge = 2;
+        int maxKindergartenAge = 6;
+
+        int minSchoolAge = 7;
+        int maxSchoolAge = 17;
+
+        int minUniversityAge = 18;
+        int maxUniversityAge = 24;
+
+        if (age >= minKindergartenAge && age <= maxKindergartenAge) {
+            System.out.printf("Если возраст человека равен %d, то ему нужно ходить в десткий сад.", age);
+        } else if (age >= minSchoolAge && age <= maxSchoolAge) {
+            System.out.printf("Если возраст человека равен %d, то ему нужно ходить в школу.", age);
+        } else if (age >= minUniversityAge && age <= maxUniversityAge) {
+            System.out.printf("Если возраст человека равен %d, то ему нужно ходить в университет.", age);
+        } else if (age > maxUniversityAge) {
+            System.out.printf("Если возраст человека равен %d, то ему нужно ходить на работу.", age);
+        }
+
+        // Задача 5.
+        System.out.println("\nTask 5.");
+
+        int childAge = 14;
+
+        if (childAge < 5) {
+            System.out.printf("Если возраст ребенка равен %d, то ему нельзя кататься на аттракционе.", childAge);
+        } else if (childAge < 14) {
+            System.out.printf("Если возраст ребенка равен %d, то ему можно кататься на аттракционе в сопровождении взрослых.", childAge);
+        } else if (childAge >= 14) {
+            System.out.printf("Если возраст ребенка равен %d, то можно кататься ему без сопровождения взрослого.", childAge);
+        }
+
+        // Задача 6.
+        System.out.println("\nTask 6.");
+
+        int railwayCarriageCapacity = 102;
+        int seatings = 60;
+
+        int сlientNumber = 103;
+
+        if (сlientNumber <= seatings){
+            System.out.printf("В вагоне есть сидячие места.");
+        } else if (сlientNumber <= railwayCarriageCapacity) {
+            System.out.printf("В вагоне есть только стоячие места.");
+        } else {
+            System.out.printf("В вагоне нет мест.");
+        }
+
+        // Задача 7.
+        System.out.println("\nTask 7.");
+
+        int one = 1;
+        int two = 2;
+        int three = 3;
+
+        if (one == two || one == three || two == three){
+            System.out.println("Некорректные данные: имеются равнозначные числа.");
+        } else if (one > two && one > three) {
+            System.out.printf("Число one = %d явялется наибольшим.\n", one);
+        } else if (two > one && two > three) {
+            System.out.printf("Число two = %d явялется наибольшим.\n", two);
+        } else {
+            System.out.printf("Число three = %d явялется наибольшим.\n", three);
+        }
     }
 }
