@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -16,6 +18,9 @@ public class Main {
 
         // Условные операторы: Урок 2.
         executeConditionsLessonPart2();
+
+        // Циклы: Урок 1.
+        executeCyclesLessonPart1();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -501,6 +506,78 @@ public class Main {
                 break;
             default:
                 System.out.println("Указан некорректный номер месяца.");
+        }
+    }
+
+    // Выполнить урок "Циклы, Урок 1"
+    private static void executeCyclesLessonPart1(){
+        System.out.println("Циклы: Урок 1.");
+
+        System.out.println("\nTask 1.");
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nTask 2.");
+
+        for (int i = 10; i > 0; i--) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nTask 3.");
+
+        for (int i = 0; i <= 17; i += 2) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nTask 4.");
+
+        for (int i = 10; i >= -10; i--) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nTask 5.");
+
+        for (int i = 1904; i <= 2096; i += 4) {
+            System.out.printf("%d год является високосным.\n", i);
+        }
+
+        System.out.println("\nTask 6.");
+
+        for (int i = 7; i <= 98; i += 7) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nTask 7.");
+
+        for (int i = 1; i <= 512; i *= 2) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nTask 8.");
+
+        int monthSalary = 29000;
+
+        for (int i = 1; i <= 12; i++) {
+            System.out.printf("Месяц %d, сумма накоплений равна %d рублей.\n", i, monthSalary * i);
+        }
+
+        System.out.println("\nTask 9.");
+
+        double depositPercent = 0.12;
+        double salary = 29000.0;
+        double capital = 0;
+
+        for (int i = 1; i <= 12; i++) {
+            capital = capital + capital * depositPercent / 12.0 + salary;
+            System.out.printf("Месяц %d, сумма накоплений равна %s рублей.\n", i, new DecimalFormat("#0.00").format(capital));
+        }
+
+        System.out.println("\nTask 10.");
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("2 * %d = %d\n", i, i * 2);
         }
     }
 }
