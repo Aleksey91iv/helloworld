@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-/*
+
         System.out.println("Привет, Мир!");
         System.out.println("Hello, World!");
 
@@ -22,7 +22,7 @@ public class Main {
 
         // Циклы: Урок 1.
         executeCyclesLessonPart1();
-*/
+
         // Циклы: Урок 2.
         executeCyclesLessonPart2();
     }
