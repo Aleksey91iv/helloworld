@@ -607,18 +607,16 @@ public class Main {
         int number = 1;
         int maxNumber = 10;
 
-        StringBuilder directSequenceStringBuilder = new StringBuilder();
-        StringBuilder reverseSequenceStringBuilder = new StringBuilder();
-
         while (number <= maxNumber) {
-            directSequenceStringBuilder.append(String.format("%d ", number));
-            reverseSequenceStringBuilder.append(String.format("%d ", maxNumber - (number - 1)));
+            System.out.print(number + " ");
             number++;
         }
+        System.out.print("\n");
 
-        directSequenceStringBuilder.append("\n");
-        directSequenceStringBuilder.append(reverseSequenceStringBuilder.toString());
-        System.out.println(directSequenceStringBuilder.toString());
+        for (number = maxNumber; number > 0; number--){
+            System.out.print(number + " ");
+        }
+        System.out.print("\n");
 
         System.out.println("\nTask 3.");
 
@@ -685,14 +683,14 @@ public class Main {
 
         System.out.println("\nTask 7.");
 
-        int firstFridayDate = 2;
-        int dayInMonth = 30;
+        int firstFridayDate = 3;
+        int dayInMonth = 31;
         for (int day = 1; day <= dayInMonth; day++) {
             if ((day - firstFridayDate) % 7 == 0){
                 System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет.\n", day);
             }
         }
-        System.out.println("\nTask 7.");
+        System.out.println("\nTask 8.");
 
         int passageCometPeriod = 79;
         int currentYear = 2025;
