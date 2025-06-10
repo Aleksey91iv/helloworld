@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("Привет, Мир!");
         System.out.println("Hello, World!");
 
@@ -21,6 +22,9 @@ public class Main {
 
         // Циклы: Урок 1.
         executeCyclesLessonPart1();
+
+        // Циклы: Урок 2.
+        executeCyclesLessonPart2();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -578,6 +582,125 @@ public class Main {
 
         for (int i = 1; i <= 10; i++) {
             System.out.printf("2 * %d = %d\n", i, i * 2);
+        }
+    }
+
+    // Выполнить урок "Циклы, Урок 2"
+    private static void executeCyclesLessonPart2(){
+        System.out.println("Циклы: Урок 2.");
+
+        System.out.println("\nTask 1.");
+
+        double capital = 0;
+        double targetCapital = 2490000.0;
+        double monthDeposit = 15000.0;
+
+        int month = 0;
+        while (capital < targetCapital){
+            capital += monthDeposit;
+            System.out.printf("Месяц %d, сумма накоплений равна %s рублей.\n", month, new DecimalFormat("#0.00").format(capital));
+            month++;
+        }
+
+        System.out.println("\nTask 2.");
+
+        int number = 1;
+        int maxNumber = 10;
+
+        while (number <= maxNumber) {
+            System.out.print(number + " ");
+            number++;
+        }
+        System.out.print("\n");
+
+        for (number = maxNumber; number > 0; number--){
+            System.out.print(number + " ");
+        }
+        System.out.print("\n");
+
+        System.out.println("\nTask 3.");
+
+        double population = 12000000;
+        double thousandDeathRate = 8;
+        double thousandBirthRate = 17;
+        double estimatedEndYear = 10;
+
+        int currentEstimatedYear = 1;
+
+        while (currentEstimatedYear <= estimatedEndYear) {
+            population += (population / 1000) * (thousandBirthRate - thousandDeathRate);
+            System.out.printf("Год %d, численность населения составляет %d.\n", currentEstimatedYear, (int)population);
+            currentEstimatedYear++;
+        }
+
+        System.out.println("\nTask 4.");
+
+        double depositPercents = 7;
+        double vasiliyTargetCapital = 12000000.0;
+        double vasiliyMonthDeposit = 15000.0;
+
+        double currentCapital = 0;
+
+        int currentMonth = 0;
+        while (currentCapital < vasiliyTargetCapital) {
+            currentCapital += (currentCapital * depositPercents / 100) / 12 + vasiliyMonthDeposit;
+            System.out.printf("Месяц %d: %s рублей.\n", currentMonth, new DecimalFormat("#0.00").format(currentCapital));
+            currentMonth++;
+        }
+
+        System.out.println("\nTask 5.");
+
+        currentCapital = 0;
+        currentMonth = 0;
+
+        int monthsDisplayInterval = 6;
+
+        while (currentCapital < vasiliyTargetCapital) {
+            currentCapital += (currentCapital * depositPercents / 100) / 12 + vasiliyMonthDeposit;
+
+            if (currentMonth % monthsDisplayInterval == 0 && currentMonth >= 1) {
+                System.out.printf("Месяц %d: %s рублей.\n", currentMonth, new DecimalFormat("#0.00").format(currentCapital));
+            }
+            currentMonth++;
+        }
+
+        System.out.println("\nTask 6.");
+
+        currentCapital = 0;
+        currentMonth = 0;
+        monthsDisplayInterval = 6;
+
+        int depositYears = 9;
+        int depositDuration = depositYears * 12;
+
+        for (int i = 0; i <= depositDuration; i++) {
+            currentCapital += (currentCapital * depositPercents / 100) / 12 + vasiliyMonthDeposit;
+
+            if (i % monthsDisplayInterval == 0 && i >= 1) {
+                System.out.printf("Месяц %d: %s рублей.\n", i, new DecimalFormat("#0.00").format(currentCapital));
+            }
+        }
+
+        System.out.println("\nTask 7.");
+
+        int firstFridayDate = 3;
+        int dayInMonth = 31;
+        for (int day = 1; day <= dayInMonth; day++) {
+            if ((day - firstFridayDate) % 7 == 0){
+                System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет.\n", day);
+            }
+        }
+        System.out.println("\nTask 8.");
+
+        int passageCometPeriod = 79;
+        int currentYear = 2025;
+        int happenedInterval = 200;
+        int nearestExpectedInterval = 100;
+
+        for (int i = currentYear - happenedInterval; i < currentYear + nearestExpectedInterval; i++){
+            if (i % passageCometPeriod == 0){
+                System.out.println(i);
+            }
         }
     }
 }
