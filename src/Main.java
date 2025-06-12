@@ -29,6 +29,9 @@ public class Main {
 
         // Массивы: Урок 3.
         executeArraysLessonPart1();
+
+        // Массивы: Урок 4.
+        executeArraysLessonPart2();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -754,4 +757,56 @@ public class Main {
 
         System.out.println(Arrays.toString(intArray));
     }
+
+    // Выполнить урок "Массивы, Урок 1"
+    private static void executeArraysLessonPart2(){
+        System.out.println("Массивы: Урок 2.");
+
+        System.out.println("\nTask 1.");
+
+        int [] payments = {4, 9, 3, 12, 80};
+
+        int paymentsSum = 0;
+        for (final int payment : payments){
+            paymentsSum += payment;
+        }
+        System.out.printf("Сумма трат за месяц составила %d рублей\n", paymentsSum);
+
+        System.out.println("\nTask 2.");
+
+        int minPayment = payments[0];
+        int maxPayment = payments[0];
+        for (final int payment : payments){
+            minPayment = Math.min(payment, minPayment);
+            maxPayment = Math.max(payment, maxPayment);
+        }
+        System.out.printf("Минимальная сумма трат за неделю составила %d рублей." +
+            "Максимальная сумма трат за неделю составил %d рублей\n",
+            minPayment, maxPayment);
+
+        System.out.println("\nTask 3.");
+
+        double averageWeekPayment = 0;
+        for (final int weekPayment : payments){
+            averageWeekPayment += weekPayment;
+        }
+        averageWeekPayment = averageWeekPayment / payments.length;
+        System.out.printf("Средняя сумма трат за месяц составила %s рублей»", new DecimalFormat("#0.00").format(averageWeekPayment));
+
+        System.out.println("\nTask 4.");
+
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+
+        int indexLimit = reverseFullName.length % 2 == 0 ? reverseFullName.length / 2 : reverseFullName.length / 2 + 1;
+        for (int i = 0; i < indexLimit; i++){
+            char tempChar = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = tempChar;
+        }
+
+        for (char charToPrint : reverseFullName){
+            System.out.print(charToPrint);
+        }
+        System.out.print("\n");
+   }
 }
