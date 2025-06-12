@@ -27,10 +27,10 @@ public class Main {
         // Циклы: Урок 2.
         executeCyclesLessonPart2();
 
-        // Массивы: Урок 3.
+        // Массивы: Урок 1.
         executeArraysLessonPart1();
 
-        // Массивы: Урок 4.
+        // Массивы: Урок 2.
         executeArraysLessonPart2();
     }
 
