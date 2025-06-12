@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -25,6 +26,9 @@ public class Main {
 
         // Циклы: Урок 2.
         executeCyclesLessonPart2();
+
+        // Массивы: Урок 3.
+        executeArraysLessonPart1();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -702,5 +706,52 @@ public class Main {
                 System.out.println(i);
             }
         }
+    }
+
+    // Выполнить урок "Массивы, Урок 1"
+    private static void executeArraysLessonPart1() {
+        System.out.println("Массивы: Урок 1.");
+
+        System.out.println("\nTask 1.");
+
+        int [] intArray = new int[]{1, 2, 3};
+        double [] doubleArray = {1.57, 7.654, 9.986};
+        char [] charArray = {'a', 'b', 'c', 'd'};
+
+        System.out.println("\nTask 2.");
+
+        for (int i = 0; i < intArray.length; i++) {
+            System.out.print((i != intArray.length - 1) ? (intArray[i] +", ") : (intArray[i] + "\n"));
+        }
+
+        for (int i = 0; i < doubleArray.length; i++) {
+            System.out.print((i != doubleArray.length - 1) ? (doubleArray[i] +", ") : (doubleArray[i] + "\n"));
+        }
+
+        for (int i = 0; i < charArray.length; i++) {
+            System.out.print((i != charArray.length - 1) ? (charArray[i] +", ") : (charArray[i] + "\n"));
+        }
+
+        System.out.println("\nTask 3.");
+
+        for (int i = intArray.length - 1; i >= 0; i--) {
+            System.out.print((i != 0) ? (intArray[i] +", ") : (intArray[i] + "\n"));
+        }
+
+        for (int i = doubleArray.length - 1; i >= 0; i--) {
+            System.out.print(i != 0 ? (doubleArray[i] +", ") : (doubleArray[i] + "\n"));
+        }
+
+        for (int i = charArray.length - 1; i >= 0 ; i--) {
+            System.out.print(i != 0 ? (charArray[i] +", ") : (charArray[i] + "\n"));
+        }
+
+        System.out.println("\nTask 4.");
+
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = intArray[i] % 2 == 0 ? intArray[i] : ++intArray[i];
+        }
+
+        System.out.println(Arrays.toString(intArray));
     }
 }
