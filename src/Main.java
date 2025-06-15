@@ -32,6 +32,9 @@ public class Main {
 
         // Массивы: Урок 2.
         executeArraysLessonPart2();
+
+        // Строки.
+        executeStringLesson();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -809,4 +812,27 @@ public class Main {
         }
         System.out.print("\n");
    }
+
+   // Выполнить урок "Строки"
+    private  static void executeStringLesson() {
+        System.out.println("Строки");
+
+        System.out.println("\nTask 1.");
+
+        String firstName = "Ivanov";
+        String middleName = "Ivan";
+        String lastName = "Ivanovich";
+        String fullName = firstName + " " + middleName + " " + lastName;
+
+        System.out.println(fullName);
+
+        System.out.println("\nTask 2.");
+
+        System.out.printf("Данные Ф. И. О. сотрудника для заполнения отчета — %s.\n", fullName.toUpperCase());
+
+        System.out.println("\nTask 3.");
+
+        fullName = "Иванов Семён Семёнович";
+        System.out.printf("Данные Ф. И. О. сотрудника — %s.\n", fullName.replace('ё', 'е'));
+    }
 }
