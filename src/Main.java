@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -35,6 +36,9 @@ public class Main {
 
         // Строки.
         executeStringLesson();
+
+        // Методы.
+        executeMethodsLesson();
     }
 
     // Выполнить урок "Переменные: Урок 1"
@@ -443,7 +447,7 @@ public class Main {
         } else if (userOS == androidOS){
             System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
         } else {
-            System.out.println("Отсутствует версия приложения по вашу ОС.");
+            System.out.println("Отсутствует версия приложения для вашей ОС.");
         }
 
         // Задача 3.
@@ -813,8 +817,8 @@ public class Main {
         System.out.print("\n");
    }
 
-   // Выполнить урок "Строки"
-    private  static void executeStringLesson() {
+    // Выполнить урок "Строки"
+    private static void executeStringLesson() {
         System.out.println("Строки");
 
         System.out.println("\nTask 1.");
@@ -834,5 +838,83 @@ public class Main {
 
         fullName = "Иванов Семён Семёнович";
         System.out.printf("Данные Ф. И. О. сотрудника — %s.\n", fullName.replace('ё', 'е'));
+    }
+
+    // Выполнить урок "Методы"
+    private static void executeMethodsLesson() {
+        System.out.println("Методы");
+
+        System.out.println("\nTask 1.");
+
+        int currentYear = 2024;
+        printDefineLeapYearResultMessage(defineLeapYear(currentYear), currentYear);
+
+        System.out.println("\nTask 2.");
+
+        int userOS = 3;
+        int currentPhoneReleaseYear = 2025;
+
+        System.out.println(getApplicationLink(userOS, currentPhoneReleaseYear));
+
+        System.out.println("\nTask 3.");
+
+        int deliveryDistance = 5;
+
+        if (!verifyDeliveryAvailability(deliveryDistance)) {
+            System.out.println("Доставка не выполняется на расстояние от 100 км.");
+        } else {
+            int deliveryDays = calculateDeliveryDistance(deliveryDistance);
+            System.out.printf("Доставка займёт %d дня.\n", deliveryDays);
+        }
+    }
+
+    // Определить является ли год високосным.
+    private static boolean defineLeapYear(int currentYear) {
+        return currentYear > 1584 && (currentYear % 4 == 0 && currentYear % 100 != 0 || currentYear % 400 == 0);
+    }
+
+    // Вывести сообщение о том, является ли год високосным.
+    private static void printDefineLeapYearResultMessage (boolean isLeapYear, int currentYear) {
+        if (isLeapYear) {
+            System.out.printf("%d год - високосный", currentYear);
+        } else {
+            System.out.printf("%d год - невисокосный", currentYear);
+        }
+    }
+
+    // Получить ссылку на актуальную для пользователя версию приложения.
+    private static String getApplicationLink (int userOS, int phoneReleaseYear) {
+        final int ios = 0;
+        final int androidOS = 1;
+        final int supportThresholdPhoneReleaseYear = LocalDate.now().getYear();
+
+        if (userOS == ios &&
+            phoneReleaseYear < supportThresholdPhoneReleaseYear) {
+            return "Установите облегчённую версию приложения для iOS по ссылке.";
+        } else if (userOS == ios){
+            return "Установите версию приложения для iOS по ссылке.";
+        } else if (userOS == androidOS &&
+                   phoneReleaseYear < supportThresholdPhoneReleaseYear) {
+            return "Установите облегчённую версию приложения для Android по ссылке.";
+        } else if (userOS == androidOS){
+            return "Установите версию приложения для Android по ссылке.";
+        } else {
+            return "Отсутствует версия приложения для вашей ОС.";
+        }
+    }
+
+    // Проверить наличие доставки.
+    private static boolean verifyDeliveryAvailability (int deliveryDistance) {
+        final int maxDeliveryDistance = 100;
+        return deliveryDistance < maxDeliveryDistance;
+    }
+
+    // Подсчитать время, требуемое на доставку.
+    private static int calculateDeliveryDistance (int deliveryDistance) {
+        final int firstDistanceTreshold = 20;
+        final int deliveryIntervalOneDay = 40;
+        final int incrementDays = 1;
+
+        return incrementDays * (deliveryDistance + firstDistanceTreshold + deliveryIntervalOneDay) / deliveryIntervalOneDay;
     }
 }
