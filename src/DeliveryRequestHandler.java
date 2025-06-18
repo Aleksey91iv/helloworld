@@ -1,4 +1,4 @@
-// Класс отвечающи
+// Класс обработки запроса на доставку
 public class DeliveryRequestHandler {
 
     public static String generateDeliveryRequestReport(int deliveryDistance){
