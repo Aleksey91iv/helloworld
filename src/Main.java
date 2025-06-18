@@ -847,7 +847,7 @@ public class Main {
         System.out.println("\nTask 1.");
 
         int currentYear = 2024;
-        printDefineLeapYearResultMessage(defineLeapYear(currentYear), currentYear);
+        printDefineLeapYearResultMessage(currentYear);
 
         System.out.println("\nTask 2.");
 
@@ -858,14 +858,8 @@ public class Main {
 
         System.out.println("\nTask 3.");
 
-        int deliveryDistance = 5;
-
-        if (!verifyDeliveryAvailability(deliveryDistance)) {
-            System.out.println("Доставка не выполняется на расстояние от 100 км.");
-        } else {
-            int deliveryDays = calculateDeliveryDistance(deliveryDistance);
-            System.out.printf("Доставка займёт %d дня.\n", deliveryDays);
-        }
+        int deliveryDistance = 20;
+        System.out.println(DeliveryRequestHandler.generateDeliveryRequestReport(deliveryDistance));
     }
 
     // Определить является ли год високосным.
@@ -874,8 +868,8 @@ public class Main {
     }
 
     // Вывести сообщение о том, является ли год високосным.
-    private static void printDefineLeapYearResultMessage (boolean isLeapYear, int currentYear) {
-        if (isLeapYear) {
+    private static void printDefineLeapYearResultMessage (int currentYear) {
+        if (defineLeapYear(currentYear)) {
             System.out.printf("%d год - високосный", currentYear);
         } else {
             System.out.printf("%d год - невисокосный", currentYear);
@@ -901,20 +895,5 @@ public class Main {
         } else {
             return "Отсутствует версия приложения для вашей ОС.";
         }
-    }
-
-    // Проверить наличие доставки.
-    private static boolean verifyDeliveryAvailability (int deliveryDistance) {
-        final int maxDeliveryDistance = 100;
-        return deliveryDistance < maxDeliveryDistance;
-    }
-
-    // Подсчитать время, требуемое на доставку.
-    private static int calculateDeliveryDistance (int deliveryDistance) {
-        final int firstDistanceTreshold = 20;
-        final int deliveryIntervalOneDay = 40;
-        final int incrementDays = 1;
-
-        return incrementDays * (deliveryDistance + firstDistanceTreshold + deliveryIntervalOneDay) / deliveryIntervalOneDay;
     }
 }
